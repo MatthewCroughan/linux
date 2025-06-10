@@ -900,7 +900,6 @@ static int shift_sh8804b_on(struct shift_sh8804b *ctx)
 			       0xff, 0xff, 0xff, 0xff, 0xff, 0x00);
 	mipi_dsi_dcs_write_seq(dsi, 0xff, 0x3c, 0x0b);
 	mipi_dsi_dcs_write_seq(dsi, 0xb3, 0x01, 0x01, 0x00, 0xb0);
-	// 0x00 - 60 Hz | 0x01 - 90 Hz | 0x02 - 120 Hz
 	mipi_dsi_dcs_write_seq(dsi, 0x70, 0x00);
 	usleep_range(5000, 6000);
 	mipi_dsi_dcs_write_seq(dsi, 0x03, 0x00);
@@ -1042,8 +1041,9 @@ static const struct drm_display_mode shift_sh8804b_mode = {
 	.vsync_start = 2400 + 28,
 	.vsync_end = 2400 + 28 + 8,
 	.vtotal = 2400 + 28 + 8 + 8,
-	.width_mm = 69,
-	.height_mm = 154,
+	/* FIXME: check this! */
+	.width_mm = 75,
+	.height_mm = 152,
 };
 
 static int shift_sh8804b_get_modes(struct drm_panel *panel,
@@ -1136,8 +1136,6 @@ static int shift_sh8804b_probe(struct mipi_dsi_device *dsi)
 
 	dsi->lanes = 4;
 	dsi->format = MIPI_DSI_FMT_RGB888;
-	dsi->mode_flags = MIPI_DSI_MODE_VIDEO_BURST |
-			  MIPI_DSI_CLOCK_NON_CONTINUOUS;
 
 	drm_panel_init(&ctx->panel, dev, &shift_sh8804b_panel_funcs,
 		       DRM_MODE_CONNECTOR_DSI);
