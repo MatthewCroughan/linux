@@ -3824,7 +3824,7 @@ static int qmp_combo_typec_mux_set(struct typec_mux_dev *mux, struct typec_mux_s
 		/* DP Only */
 		case TYPEC_DP_STATE_C:
 		case TYPEC_DP_STATE_E:
-			new_mode = QMPPHY_MODE_DP_ONLY;
+			new_mode = QMPPHY_MODE_USB3DP;
 			break;
 
 		/* DP + USB */
@@ -3838,7 +3838,7 @@ static int qmp_combo_typec_mux_set(struct typec_mux_dev *mux, struct typec_mux_s
 		}
 	} else {
 		/* No DP SVID => don't care, assume it's just USB3 */
-		new_mode = QMPPHY_MODE_USB3_ONLY;
+		new_mode = QMPPHY_MODE_USB3DP;
 	}
 
 	if (new_mode == qmp->qmpphy_mode) {
