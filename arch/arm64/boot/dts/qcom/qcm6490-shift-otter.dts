@@ -614,7 +614,7 @@
 };
 
 &mdss_dp_out {
-	data-lanes = <0 1 2 3>;
+	data-lanes = <0 1>;
 	remote-endpoint = <&usb_dp_qmpphy_dp_in>;
 };
 
@@ -1091,7 +1091,7 @@
 };
 
 &usb_1 {
-	dr_mode = "otg";
+	dr_mode = "host";
 	usb-role-switch;
 
 	status = "okay";
