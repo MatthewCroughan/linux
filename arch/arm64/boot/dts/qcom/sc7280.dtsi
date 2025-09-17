@@ -3769,6 +3769,8 @@
 			status = "disabled";
 			#phy-cells = <0>;
 
+			qcom,select-utmi-as-pipe-clk
+
 			clocks = <&rpmhcc RPMH_CXO_CLK>;
 			clock-names = "ref";
 
@@ -3782,6 +3784,8 @@
 			status = "disabled";
 			#phy-cells = <0>;
 
+			qcom,select-utmi-as-pipe-clk
+
 			clocks = <&rpmhcc RPMH_CXO_CLK>;
 			clock-names = "ref";
 
@@ -3792,6 +3796,8 @@
 			compatible = "qcom,sc7280-qmp-usb3-dp-phy";
 			reg = <0 0x088e8000 0 0x3000>;
 			status = "disabled";
+
+			qcom,select-utmi-as-pipe-clk
 
 			clocks = <&gcc GCC_USB3_PRIM_PHY_AUX_CLK>,
 				 <&rpmhcc RPMH_CXO_CLK>,
@@ -3844,6 +3850,8 @@
 			compatible = "qcom,sc7280-dwc3", "qcom,snps-dwc3";
 			reg = <0 0x08c00000 0 0xfc100>;
 			status = "disabled";
+
+			qcom,select-utmi-as-pipe-clk
 
 			clocks = <&gcc GCC_CFG_NOC_USB3_SEC_AXI_CLK>,
 				 <&gcc GCC_USB30_SEC_MASTER_CLK>,
@@ -4391,6 +4399,8 @@
 			compatible = "qcom,sc7280-dwc3", "qcom,snps-dwc3";
 			reg = <0 0x0a600000 0 0xfc100>;
 			status = "disabled";
+
+			qcom,select-utmi-as-pipe-clk
 
 			clocks = <&gcc GCC_CFG_NOC_USB3_PRIM_AXI_CLK>,
 				 <&gcc GCC_USB30_PRIM_MASTER_CLK>,
