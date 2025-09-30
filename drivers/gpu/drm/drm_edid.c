@@ -222,6 +222,11 @@ static const struct edid_quirk {
 	EDID_QUIRK('V', 'L', 'V', 0x91be, BIT(EDID_QUIRK_NON_DESKTOP)),
 	EDID_QUIRK('V', 'L', 'V', 0x91bf, BIT(EDID_QUIRK_NON_DESKTOP)),
 
+	/* XReal Air */
+	EDID_QUIRK('M', 'R', 'G', 0x3132, BIT(EDID_QUIRK_NON_DESKTOP)),
+	/* XReal Air 2 Pro */
+	EDID_QUIRK('M', 'R', 'G', 0x3135, BIT(EDID_QUIRK_NON_DESKTOP)),
+
 	/* HTC Vive and Vive Pro VR Headsets */
 	EDID_QUIRK('H', 'V', 'R', 0xaa01, BIT(EDID_QUIRK_NON_DESKTOP)),
 	EDID_QUIRK('H', 'V', 'R', 0xaa02, BIT(EDID_QUIRK_NON_DESKTOP)),
