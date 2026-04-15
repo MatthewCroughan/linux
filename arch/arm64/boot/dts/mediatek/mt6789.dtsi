@@ -269,6 +269,13 @@
 		clock-output-names = "clk32k";
 	};
 
+	ulposc: clock-ulposc {
+		compatible = "fixed-clock";
+		#clock-cells = <0>;
+		clock-freqency = <260000000>;
+		clock-output-names = "ulposc";
+	};
+
 	gpu_opp_table: opp-table-gpu {
 		compatible = "operating-points-v2";
 		opp-shared;
@@ -790,6 +797,7 @@
 			power-domains = <&spm MT6789_POWER_DOMAIN_DISP>;
 			clocks = <&mmsys CLK_MM_DISP_MUTEX0>;
 			mediatek,gce-client-reg = <&gce0 SUBSYS_1400XXXX 0x1000 0x1000>;
+			status = "disabled";
 		};
 
 		smi_sub_comm_disp0: smi@1401b000 {
@@ -802,6 +810,7 @@
 			         <&mmsys CLK_MM_SMI_IOMMU>;
 			mediatek,smi = <&smi_common_disp>;
 			clock-names = "apb", "smi", "gals0", "gals1";
+			status = "disabled";
 		};
 
 		smi_sub_comm_disp1: smi@1401c000 {
@@ -814,6 +823,7 @@
 			         <&mmsys CLK_MM_SMI_IOMMU>;
 			mediatek,smi = <&smi_common_disp>;
 			clock-names = "apb", "smi", "gals0", "gals1";
+			status = "disabled";
 		};
 
 		smi_common_disp: smi@14002000 {
@@ -825,6 +835,7 @@
 			         <&mmsys CLK_MM_SMI_IOMMU>;
 			clock-names = "apb", "smi", "gals0", "gals1";
 			power-domains = <&spm MT6789_POWER_DOMAIN_DISP>;
+			status = "disabled";
 		};
 
 		smi_sub_comm_img1: smi@1401e000 {
@@ -837,6 +848,7 @@
 			         <&mmsys CLK_MM_SMI_GALS>,
 			         <&mmsys CLK_MM_SMI_IOMMU>;
 			clock-names = "apb", "smi", "gals0", "gals1";
+			status = "disabled";
 		};
 
 		smi_sub_comm_img0: smi@1502f000 {
@@ -849,6 +861,7 @@
 			         <&imgsys CLK_IMGSYS_DIP>,
 			         <&imgsys CLK_IMGSYS_GALS>;
 			clock-names = "apb", "smi", "gals0", "gals1";
+			status = "disabled";
 		};
 
 		smi_sub_comm_ipe: smi@1b00e000 {
@@ -861,6 +874,7 @@
 			         <&ipesys CLK_IPE_SMI_SUBCOM>,
 			         <&ipesys CLK_IPE_SMI_SUBCOM>;
 			clock-names = "apb", "smi", "gals0", "gals1";
+			status = "disabled";
 		};
 
 		smi_sub_comm_cam1: smi@1a00c000 {
@@ -873,6 +887,7 @@
 			         <&camsys CLK_CAM_M_LARB14>,
 			         <&camsys CLK_CAM_M_CAM>;
 			clock-names = "apb", "smi", "gals0", "gals1";
+			status = "disabled";
 		};
 
 		smi_sub_comm_cam0: smi@1a00d000 {
@@ -885,6 +900,7 @@
 			         <&camsys CLK_CAM_M_LARB13>,
 			         <&camsys CLK_CAM_M_CAM>;
 			clock-names = "apb", "smi", "gals0", "gals1";
+			status = "disabled";
 		};
 
 		larb0: smi@14003000 {
@@ -898,6 +914,7 @@
 			         <&mmsys CLK_MM_SMI_GALS>,
 			         <&mmsys CLK_MM_SMI_IOMMU>;
 			clock-names = "apb", "smi", "gals0", "gals1";
+			status = "disabled";
 		};
 
 		larb1: smi@14004000 {
@@ -911,6 +928,7 @@
 			         <&mmsys CLK_MM_SMI_GALS>,
 			         <&mmsys CLK_MM_SMI_IOMMU>;
 			clock-names = "apb", "smi", "gals0", "gals1";
+			status = "disabled";
 		};
 
 		larb2: smi@1f002000 {
@@ -922,6 +940,7 @@
 			clocks = <&mdpsys CLK_MDP_SMI0>,
 			         <&mdpsys CLK_MDP_SMI0>;
 			clock-names = "apb","smi";
+			status = "disabled";
 		};
 
 		larb4: smi@1602e000 {
@@ -933,6 +952,7 @@
 			clocks = <&vdecsys CLK_VDE2_LARB1_CKEN>,
 			         <&vdecsys CLK_VDE2_VDEC_CKEN>;
 			clock-names = "apb", "smi";
+			status = "disabled";
 		};
 
 		larb7: smi@17010000 {
@@ -944,6 +964,7 @@
 			clocks = <&vencsys CLK_VEN1_CKE0_LARB>,
 			         <&vencsys CLK_VEN1_CKE2_JPGENC>;
 			clock-names = "apb", "smi";
+			status = "disabled";
 		};
 
 		larb9: smi@1502e000 {
@@ -955,6 +976,7 @@
 			clocks = <&imgsys CLK_IMGSYS_LARB9>,
 			         <&imgsys CLK_IMGSYS_LARB9>;
 			clock-names = "apb", "smi";
+			status = "disabled";
 		};
 
 		larb20: smi@1b00f000 {
@@ -966,6 +988,7 @@
 			clocks = <&ipesys CLK_IPE_LARB20>,
 			         <&ipesys CLK_IPE_LARB20>;
 			clock-names = "apb", "smi";
+			status = "disabled";
 		};
 
 		larb13: smi@1a001000 {
@@ -977,6 +1000,7 @@
 			clocks = <&camsys CLK_CAM_M_LARB13>,
 			         <&camsys CLK_CAM_M_LARB13>;
 			clock-names = "apb", "smi";
+			status = "disabled";
 		};
 
 		larb14: smi@1a002000 {
@@ -988,6 +1012,7 @@
 			clocks = <&camsys CLK_CAM_M_LARB14>,
 			         <&camsys CLK_CAM_M_LARB14>;
 			clock-names = "apb", "smi";
+			status = "disabled";
 		};
 
 		larb16: smi@1a00f000 {
@@ -999,6 +1024,7 @@
 			clocks = <&camsys_raw_a CLK_CAM_RA_LARBX>,
 			         <&camsys_raw_a CLK_CAM_RA_CAM>;
 			clock-names = "apb", "smi";
+			status = "disabled";
 		};
 
 		larb17: smi@1a010000 {
@@ -1010,6 +1036,7 @@
 			clocks = <&camsys_raw_b CLK_CAM_RB_LARBX>,
 			         <&camsys_raw_b CLK_CAM_RB_CAM>;
 			clock-names = "apb", "smi";
+			status = "disabled";
 		};
 
 		dsc0: dsc@14012000 {
@@ -1019,6 +1046,7 @@
 			power-domains = <&spm MT6789_POWER_DOMAIN_DISP>;
 			clocks = <&mmsys CLK_MM_DISP_DSC_WRAP0>;
 			mediatek,gce-client-reg = <&gce0 SUBSYS_1401XXXX 0x2000 0x1000>;
+			status = "disabled";
 		};
 
 		gpu: gpu@13000000 {
@@ -1046,6 +1074,7 @@
 			#clock-cells = <0>;
 			#phy-cells = <0>;
 			clock-output-names = "mipi_tx0_pll";
+			status = "disabled";
 		};
 
 		dsi0: dsi@14013000 {
@@ -1061,6 +1090,7 @@
 			//resets = <&mmsys MT6789_MMSYS_SW0_RST_DSI>;
 			phys = <&mipi_tx0>;
 			phy-names = "dphy";
+			status = "disabled";
 		};
 
 		ovl0: ovl@14005000 {
@@ -1070,6 +1100,7 @@
 			power-domains = <&spm MT6789_POWER_DOMAIN_DISP>;
 			clocks = <&mmsys CLK_MM_DISP_OVL0>;
 			mediatek,gce-client-reg = <&gce0 SUBSYS_1400XXXX 0x5000 0x1000>;
+			status = "disabled";
 		};
 
 		rdma0: rdma@14007000 {
@@ -1080,6 +1111,7 @@
 			clocks = <&mmsys CLK_MM_DISP_RDMA0>;
 			mediatek,rdma-fifo-size = <48992>;
 			mediatek,gce-client-reg = <&gce0 SUBSYS_1400XXXX 0x7000 0x1000>;
+			status = "disabled";
 		};
 
 		dither0: dither@14012000 {
@@ -1089,6 +1121,7 @@
 			power-domains = <&spm MT6789_POWER_DOMAIN_DISP>;
 			clocks = <&mmsys CLK_MM_DISP_DITHER0>;
 			mediatek,gce-client-reg = <&gce0 SUBSYS_1400XXXX 0xf000 0x1000>;
+			status = "disabled";
 		};
 
 		usb2: usb@11200000 {
@@ -1138,8 +1171,8 @@
 			      <0 0x11e60000 0 0x1000>,
 			      <0 0x11ea0000 0 0x1000>,
 			      <0 0x1000b000 0 0x1000>;
-			reg-names = "base", "rb",  "bm", "br", "lm", "bl",
-				    "rt", "eint";
+			reg-names = "iocfg0", "iocfg_rb", "iocfg_bm", "iocfg_br",
+					"iocfg_lm", "iocfg_bl", "iocfg_rt", "eint";
 			gpio-controller;
 			#gpio-cells = <2>;
 			gpio-ranges = <&pio 0 0 188>;
